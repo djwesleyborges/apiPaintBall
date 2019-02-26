@@ -23,6 +23,7 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
+
 class AdvertisementListViewSet(ModelViewSet):
     serializer_class = AdvertisementSerializer
     permission_classes = (IsAuthenticated,)
@@ -35,32 +36,9 @@ class AdvertisementListViewSet(ModelViewSet):
     def list(self, request, *args, **kwargs):
         return super(AdvertisementListViewSet, self).list(request, *args, **kwargs)
 
-    def returnAdvertisement(self, request):
-        ad = Advertisement.objects.filter(created_by=request.user)
-        serializer = AdvertisementSerializer(ad)
-        return serializer
-
     def create(self, request, *args, **kwargs):
-        user = self.request.user
-        title = self.request.data['title']
-        address = self.request.data['address']
-        complement = self.request.data['complement']
-        zip_code = self.request.data['zip_code']
-        price = self.request.data['price']
-        description = self.request.data['description']
-        ad = Advertisement.objects.create(title=title, address=address, complement=complement,
-                                          zip_code=zip_code, price=price, description=description,
-                                          created_by=user)
-        ad.save()
-        # ad = get_object_or_404(Advertisement.objects.all(pk=request.user.id))
-        # serializer = serializers.AdvertisementSerializer(ad)
-        # return Response(serializer.data)
-        json = self.returnAdvertisement(request)
-        content = {'Message': 'Your Advertisement has been created with success'}
+        return super(AdvertisementListViewSet, self).create(request, *args, **kwargs)
 
-        return Response(json.data, status=status.HTTP_201_CREATED)
-
-    # GET COM PASSAGEM DE PARAMETRO retorna um usuario especifico http://127.0.0.1:8000/ad/1/
     def retrieve(self, request, *args, **kwargs):
         return super(AdvertisementListViewSet, self).retrieve(request, *args, **kwargs)
 

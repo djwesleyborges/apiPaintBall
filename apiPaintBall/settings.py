@@ -146,8 +146,8 @@ AUTH_USER_MODEL = 'user.User'
 EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_PORT = 465  # (SSL exigido)
 EMAIL_PORT = 587  # (TLS exigido)
-EMAIL_HOST_USER = 'email@gmail.com'
-EMAIL_HOST_PASSWORD = 'password'
+EMAIL_HOST_USER = 'kassandraroger001@gmail.com'
+EMAIL_HOST_PASSWORD = 'naoseinao'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
 
@@ -155,7 +155,7 @@ DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
 ######### Configurações das Imagens ##############
 
 cloudinary.config(
-    cloud_name="appname",
-    api_key="api_key",
-    api_secret="api_secret"
+    cloud_name="apipaintballbr",
+    api_key="346715663431399",
+    api_secret="IuUmLwVpcpTvwagbzMUncNSmW6w"
 )
