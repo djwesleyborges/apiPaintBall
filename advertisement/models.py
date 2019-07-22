@@ -1,9 +1,11 @@
+import uuid
 from django.db import models
 from django.urls import reverse
 from user.models import User
 
 
 class Advertisement(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     complement = models.CharField(max_length=100)
@@ -15,6 +17,7 @@ class Advertisement(models.Model):
     update_at = models.DateTimeField('Update on: ', auto_now=True)
     created_by = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     # slug = models.SlugField('Unique identifier', max_length=100)
+    link = models.URLField()
 
     class Meta:
         verbose_name = 'Advertisement'

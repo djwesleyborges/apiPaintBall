@@ -1,0 +1,20 @@
+Endpoints
+
+
+Register User
+http://127.0.0.1:8000/register/
+Method = POST
+
+Body
+
+{
+	"first_name": "Andre",
+    "last_name": "Vaz",
+    "email": "andre@gmail.com",
+    "password": "xxxxxxx",
+    "perfil": {
+    	"phone": "62991414713",
+        "state": "GO",
+        "city": "Aparecida de Goiania"
+        }
+}

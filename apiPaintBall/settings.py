@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'perfil',
     'game',
     'advertisement',
+    'field',
 ]
 
 MIDDLEWARE = [
