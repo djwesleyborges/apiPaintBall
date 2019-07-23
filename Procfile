@@ -1,0 +1,1 @@
+web: gunicorn apiPaintBall.wsgi --log-file -
