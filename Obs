@@ -1,5 +1,6 @@
 Endpoints
 
+Tutorial Deployment https://github.com/Gpzim98/django-heroku
 
 Register User
 http://127.0.0.1:8000/register/

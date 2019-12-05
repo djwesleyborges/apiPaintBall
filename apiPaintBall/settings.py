@@ -34,7 +34,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['apipaintball.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'game',
     'advertisement',
     'field',
+    'forum',
 ]
 
 MIDDLEWARE = [

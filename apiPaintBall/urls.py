@@ -24,6 +24,8 @@ from game.api.viewset import GameList, GameDetails
 from game.models import Game
 from advertisement.api.viewset import AdvertisementListViewSet
 from advertisement.models import Advertisement
+from forum.api.viewset import PublicationListViewSet, AnswerListViewSet
+from forum.models import Publication, Answer
 
 from rest_framework.authtoken.views import obtain_auth_token
 
@@ -33,6 +35,8 @@ router.register(r'user', UserListViewSet, base_name='User')
 router.register(r'register', UserRegistrationAPIView, base_name=User)
 router.register(r'games', GameList, base_name=Game)
 router.register(r'ad', AdvertisementListViewSet, base_name=Advertisement)
+router.register(r'forum', PublicationListViewSet, base_name=Publication)
+router.register(r'answer', AnswerListViewSet, base_name=Answer)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
